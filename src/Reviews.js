@@ -1,3 +1,5 @@
+import reviews from "./data";
+
 function Reviews(){
 return(
     <>
