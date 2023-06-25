@@ -26,7 +26,7 @@ function Reviews({reviews}){
     const randomPerson = (index) =>{
         let random = Math.floor(Math.random() * reviews.length);
         if (random === index){
-            random = random + 2;
+            random = random + 1;
         }
         setIndex(random);
     }
