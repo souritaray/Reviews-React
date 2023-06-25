@@ -1,24 +1,18 @@
 import { useState } from "react";
 
 function Reviews({reviews}){
+
     const [index, setIndex] = useState(0);
-    // const checkIndex = (ind) =>{
-    //     if (ind > reviews.length - 1){
-    //         return 0;
-    //     }
-    //     else{
-    //         return reviews.length - 1;
-    //     }
-    // }
+    
     const previousPerson = (ind) => {
         if(ind === 0){
             setIndex(reviews.length - 1);
         }
         else{
             setIndex(ind - 1);
-        }
-        
+        } 
     }
+
     const nextPerson = (ind) =>{
         if(ind === reviews.length - 1){
             setIndex(0);
@@ -38,9 +32,6 @@ function Reviews({reviews}){
     }
 return(
     <>
-    
-           
-       
             <article className="review" >
             <div className="img-container"> 
                 <img src={reviews[index].image} alt={reviews[index].name} className="person-img" />
@@ -65,12 +56,9 @@ return(
                 </button>
             </div>
     
-            <button className="random-btn" onClick={()=>{randomPerson(index)}}>Surprise Me</button>
-                    
+            <button className="random-btn" onClick={()=>{randomPerson(index)}}>Surprise Me</button> 
+                     
         </article>
-
-        
-  
 
     </>
 )
