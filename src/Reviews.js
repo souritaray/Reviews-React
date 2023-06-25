@@ -1,17 +1,31 @@
-
+import { useState } from "react";
 
 function Reviews({reviews}){
-    
+    const [index, setIndex] = useState(0);
+    // const checkIndex = (ind) =>{
+    //     if (ind > reviews.length - 1){
+    //         return 0;
+    //     }
+    //     else{
+    //         return rev
+    //     }
+    // }
+    const previousPerson = (ind) => {
+        setIndex(ind - 1);
+    }
+    const nextPerson = (ind) =>{
+        setIndex(ind + 1);
+    }
 return(
     <>
-    {reviews.map((data)=>{
-        const {id, name, job, image, text} = data;
-        return(
-            <article className="review" key={id}>
-            <div className="img-container">{image}</div>
-            <h4 className="author">{name}</h4>
-            <p className="job">{job}</p>
-            <p className="info">{text}</p>
+    
+        {/* const {id, name, job, image, text} = data; */}
+       
+            <article className="review" >
+            <img src={reviews[index].image} alt={reviews[index].name} className="img-container" />
+            <h4 className="author">{reviews[index].name}</h4>
+            <p className="job">{reviews[index].job}</p>
+            <p className="info">{reviews[index].text}</p>
             
             <div className="button-container">
                 <button className="prev-btn">
@@ -32,8 +46,8 @@ return(
                     
         </article>
 
-        )
-    })}
+        
+  
 
     </>
 )

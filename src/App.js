@@ -1,6 +1,8 @@
 import Reviews from "./Reviews";
 import reviews from "./data";
+
 function App() {
+   
 return(
     <main>
         <section className="container">
